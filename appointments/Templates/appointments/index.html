@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClinicMate - E-Channeling</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #f8f9fa;
+        }
+        .jumbotron {
+            background-color: #007bff;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .search-form {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .featured-specialties {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .specialty-card {
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .specialty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">E-Channeling</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+
+
+                <li class="nav-item"><a class="nav-link" href="/appointments">Appointments</a></li>
+
+
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+
+            </ul>
+        </div>
+</nav>
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to ClinicMate</h1>
+    <p class="lead">Book appointments with the best doctors easily and conveniently.</p>
+    <form action="/search" method="get" class="form-inline search-form">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search for doctors" aria-label="Search" name="query">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2 class="mt-4 featured-specialties">Featured Specialties</h2>
+    <div class="row">
+        <!-- Cardiology -->
+        <div class="col-md-4">
+            <div class="specialty-card">
+                <h3>Cardiology</h3>
+                <p>Heart and blood vessels</p>
+            </div>
+        </div>
+        <!-- Dermatology -->
+        <div class="col-md-4">
+            <div class="specialty-card">
+                <h3>Dermatology</h3>
+                <p>Skin, hair, and nails</p>
+            </div>
+        </div>
+        <!-- Neurology -->
+        <div class="col-md-4">
+            <div class="specialty-card">
+                <h3>Neurology</h3>
+                <p>Nervous system</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
