@@ -4,3 +4,4 @@ from . import views
 urlpatterns = [
     path('', views.register, name='register'),
 ]
+
