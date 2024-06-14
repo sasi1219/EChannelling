@@ -1,0 +1,15 @@
+/* main/static/css/signin.css */
+/* Custom styles */
+body {
+    background-color: #f8f9fa;
+}
+.signin-container {
+    margin-top: 50px;
+}
+.signin-card {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
