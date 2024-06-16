@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'appointments',
     'register',
     'signin',
+    'place_appointment',
 ]
 
 MIDDLEWARE = [
