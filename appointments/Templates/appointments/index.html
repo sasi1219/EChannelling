@@ -6,44 +6,17 @@
     <title>ClinicMate</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <!-- Custom CSS -->
-    <style>
-        /* Custom styles */
-        body {
-            background-color: #f8f9fa;
-        }
-        .jumbotron {
-            background-color: #007bff;
-            color: #fff;
-            padding: 100px 0;
-            text-align: center;
-            margin-bottom: 0;
-        }
-        .search-form {
-            margin-top: 50px;
-            text-align: center;
-        }
-        .featured-specialties {
-            margin-top: 50px;
-            text-align: center;
-        }
-        .specialty-card {
-            background-color: #fff;
-            border: 1px solid #ced4da;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-        .specialty-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-    </style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'appointments/styles.css' %}">
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">E-Channeling</a>
+        <a class="navbar-brand" href="/">
+        <img src="{% static 'images/Logo.png' %}" alt="E-Channeling Logo">
+    </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
