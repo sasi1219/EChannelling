@@ -24,9 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('appointments.urls')),
     path('register/', include('register.urls')),
-    path ('login/', include ('signin.urls')),
-    path ('appointments/', include ('place_appointment.urls')),
-    path ('privacy_policy/', include ('privacy_policy.urls')),
-    path ('terms_and_conditions/', include('terms_and_conditions.urls')),
+    path('login/', include('signin.urls')),
+    path('appointments/', include('place_appointment.urls')),
+    path('profile/', include('user_profile.urls')),
 
 ]
