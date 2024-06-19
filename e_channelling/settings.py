@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'register',
     'signin',
     'place_appointment',
+    'user_profile',
 ]
 
 MIDDLEWARE = [
