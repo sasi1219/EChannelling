@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'register',
     'signin',
     'place_appointment',
+    'privacy_policy',
+    'terms_and_conditions'
 ]
 
 MIDDLEWARE = [
