@@ -135,16 +135,17 @@ body {
     border-radius: 10px;
     font-family: 'Segoe UI Semibold', sans-serif;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
     text-align: left;
     flex-direction: column;
     transition: all 0.3s ease;
+
 }
 
 .specialty-image {
-    max-width: 150px; /* Adjusted size */
+    max-width: 140px; /* Adjusted size */
     margin-bottom: 1rem;
 }
 
@@ -165,6 +166,7 @@ body {
 footer {
     background-color: #007bff;
     color: #fff;
+    font-family: 'Segoe UI Semibold', sans-serif;
     margin-top: 50px;
     padding: 50px 0;
     text-align: center;
