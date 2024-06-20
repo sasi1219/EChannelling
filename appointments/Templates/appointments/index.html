@@ -25,21 +25,73 @@
                 <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="{% url 'signin' %}">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-
             </ul>
         </div>
 </nav>
+
+    <!-- Bootstrap Carousel -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div class="carousel-video-wrapper">
+                        <video class="d-block w-100" autoplay muted loop>
+                            <source src="{% static 'Videos/WelcomeTransition.mp4' %}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="carousel-video-wrapper">
+                        <video class="d-block w-100" autoplay muted loop>
+                            <source src="{% static 'Videos/DiscountTransition.mp4' %}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="carousel-video-wrapper">
+                        <video class="d-block w-100" autoplay muted loop>
+                            <source src="{% static 'Videos/QuoteTransition.mp4' %}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
 <div class="jumbotron">
-    <h1 class="display-4">Welcome to ClinicMate</h1>
-    <p class="lead">Book appointments with the best doctors easily and conveniently.</p>
+
     <!-- Doctor Search Section -->
     <div class="search-form">
+        <div>
+            <p class="search-heading">Check your availability here...</p>
+        </div>
+
         <form action="/search" method="get" class="form-inline justify-content-center">
+
             <div class="form-group">
-                <input type="text" class="form-control mr-sm-2" placeholder="Search Doctor Name" name="doctor_name">
+                <label for="doctor_name">Doctor name</label>
+                <input type="text" class="form-control mr-sm-2" id="doctor_name" placeholder="Search Doctor Name" name="doctor_name">
             </div>
             <div class="form-group">
-                <select class="form-control mr-sm-2" name="specialization">
+                <label for="specialization">Specialization</label>
+                <select class="form-control mr-sm-2" id="specialization" name="specialization">
                     <option>Select Specialization</option>
                     <option>Cardiology</option>
                     <option>Dermatology</option>
@@ -50,18 +102,26 @@
                 </select>
             </div>
             <div class="form-group">
-                <select class="form-control mr-sm-2" name="hospital">
+                <label for="hospital">Hospital</label>
+                <select class="form-control mr-sm-2" id="hospital" name="hospital">
                     <option>Select Hospital</option>
-                    <!-- Add options here -->
+                    <option>The Lanka Hospitals</option>
+                    <option>Durdans Hospital</option>
+                    <option>Asiri Central Hospital</option>
+                    <option>Nawaloka Hospitals</option>
+                    <option>Ninewells Hospitals</option>
                 </select>
             </div>
             <div class="form-group">
-                <input type="date" class="form-control mr-sm-2" name="date">
+                <label for="date">Date</label>
+                <input type="date" class="form-control mr-sm-2" id="date" name="date">
             </div>
-            <button type="submit" class="btn btn-outline-light my-2 my-sm-0">Search</button>
+            <button type="submit" class="btn btn-outline-light my-2 my-sm-0">Check availability</button>
         </form>
     </div>
 </div>
+
+
 
 <div class="container">
     <h2 class="mt-4 featured-specialties">Featured Specialties</h2>
@@ -69,22 +129,54 @@
         <!-- Cardiology -->
         <div class="col-md-4">
             <div class="specialty-card">
+                <img src="{% static 'images/cardiology.jpg' %}" alt="cardiology" class="specialty-image">
                 <h3>Cardiology</h3>
-                <p>Heart and blood vessels</p>
+                <p>"Heart health is at the core of what we do. Our expert cardiologists are dedicated to providing comprehensive care for all your cardiovascular needs. Trust us with your heart, and feel the difference in every beat."
+</p>
             </div>
         </div>
         <!-- Dermatology -->
         <div class="col-md-4">
             <div class="specialty-card">
+                <img src="{% static 'images/dermatology.jpg' %}" alt="dermatology" class="specialty-image">
                 <h3>Dermatology</h3>
-                <p>Skin, hair, and nails</p>
+                <p>"Reveal your best skin with our dermatology specialists. From acne to complex skin conditions, our experts offer personalized care to keep your skin healthy and glowing. Embrace confidence with flawless skin."
+</p>
             </div>
         </div>
         <!-- Neurology -->
         <div class="col-md-4">
             <div class="specialty-card">
+                <img src="{% static 'images/neurology.jpg' %}" alt="neurology" class="specialty-image">
                 <h3>Neurology</h3>
-                <p>Nervous system</p>
+                <p>"Your brain and nervous system deserve the best care. Our neurologists are here to diagnose and treat a wide range of neurological disorders with precision and compassion. Experience a life in sync with your mind."
+</p>
+            </div>
+        </div>
+        <!-- Orthopedics -->
+        <div class="col-md-4">
+            <div class="specialty-card">
+                <img src="{% static 'images/orthopaedics.jpg' %}" alt="orthopaedics" class="specialty-image">
+                <h3>Orthopedics</h3>
+                <p>"Move freely and live actively with our orthopedic care. Whether it's a sports injury or chronic joint pain, our specialists are equipped to help you regain mobility and enjoy a pain-free life. Step into a future without limits."
+</p>
+            </div>
+        </div>
+        <!-- Pediatrics -->
+        <div class="col-md-4">
+            <div class="specialty-card">
+                <img src="{% static 'images/pediatrics.jpg' %}" alt="pediatrics" class="specialty-image">
+                <h3>Pediatrics</h3>
+                <p>"Nurturing the health of our little ones is our top priority. Our pediatricians provide comprehensive and compassionate care tailored to the unique needs of children, ensuring their growth and development in a safe and supportive environment."
+</p>
+            </div>
+        </div>
+        <!-- Psychiatry -->
+        <div class="col-md-4">
+            <div class="specialty-card">
+                <img src="{% static 'images/psychiatric.jpg' %}" alt="psychiatric" class="specialty-image">
+                <h3>Psychiatry</h3>
+                <p>"Mental well-being is crucial for a fulfilling life. Our psychiatrists offer empathetic and effective treatments for mental health conditions, helping you find balance and peace. Discover a brighter, healthier mindset with our support."</p>
             </div>
         </div>
     </div>
@@ -94,7 +186,7 @@
     <div class="container">
         <div class="row py-4">
             <div class="col-md-4 text-center mb-4">
-                <h4>Contact Us</h4>
+                <h4><B>Contact Us</B></h4>
                 <ul class="list-unstyled">
                     <li><a href="tel:+94771234567" class="text-white">+94 77 123 45 67</a></li>
                     <li><a href="mailto:info@clinicmate.com" class="text-white">info@clinicmate.com</a></li>
@@ -102,7 +194,7 @@
                 </ul>
             </div>
             <div class="col-md-4 text-center mb-4">
-                <h4>Other</h4>
+                <h4><B>Other</B></h4>
                 <ul class="list-unstyled">
                     <li><a href="{% url 'terms_and_conditions' %}" class="text-white">Terms and Conditions</a></li>
                     <li><a href="/faq" class="text-white">FAQ</a></li>
@@ -111,7 +203,7 @@
                 </ul>
             </div>
             <div class="col-md-4 text-center mb-4">
-                <h4>About</h4>
+                <h4><B>About</B></h4>
                 <ul class="list-unstyled">
                     <li><a href="/the-company" class="text-white">The Company</a></li>
                     <li><a href="/partners" class="text-white">Partners</a></li>
