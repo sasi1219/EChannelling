@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'signin',
     'place_appointment',
     'privacy_policy',
-    'terms_and_conditions'
+    'terms_and_conditions',
+    'about_us',
 ]
 
 MIDDLEWARE = [
