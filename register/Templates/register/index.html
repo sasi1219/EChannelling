@@ -6,7 +6,7 @@
     <title>ClinicMate - Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'register/styles.css' %}">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,7 +17,6 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/appointments">Appointments</a></li>
             <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
             <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="{% url 'register' %}">Register</a></li>
         </ul>
@@ -53,6 +52,10 @@
                         <input type="password" class="form-control" id="confirm-password" name="confirm-password" required>
                     </div>
                     <div class="form-group">
+                        <label for="nic" class="form-label">NIC</label>
+                        <input type="text" class="form-control" id="nic" name="nic" required>
+                    </div>
+                    <div class="form-group">
                         <label for="phone" class="form-label">Phone Number</label>
                         <input type="tel" class="form-control" id="phone" name="phone" required>
                     </div>
@@ -72,7 +75,7 @@
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="terms" name="terms" required>
                         <label class="form-check-label" for="terms">
-                            I agree to the <a href="terms.html">Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a>.
+                            I agree to the <a href="{% url 'terms_and_conditions' %}">Terms and Conditions</a> and <a href="{% url 'privacy_policy' %}" >Privacy Policy</a>.
                         </label>
                     </div>
                     <div id="captcha-container" class="mb-3"></div>
