@@ -45,71 +45,87 @@ body {
 
 /* Jumbotron Styles */
 .jumbotron {
-    background-color: #007bff;
-    color: #fff;
-    padding: 100px 0;
-    text-align: center;
+    padding: 0;
+    position: relative;
     margin-bottom: 0;
 }
 
-.jumbotron h1 {
-    font-size: 3rem;
-    animation: fadeInDown 1s ease;
+
+.carousel-inner .carousel-item img,
+ .carousel-inner .carousel-item video{
+    object-fit: cover;
+    height: 400px; /* Adjust height as needed */
 }
 
-.jumbotron p {
-    font-size: 1.5rem;
-    animation: fadeInUp 1s ease;
+.carousel-video-wrapper {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.carousel-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Search Form Styles */
 .search-form {
     margin-top: 50px;
-    text-align: center;
+    text-align: left;
+    background-color: #007bff;
+}
+
+.search-heading {
+    color: white;
+    font-size: 24px;
+    font-family: 'Segoe UI Semibold', sans-serif;
+    margin-left: 80px;
+    position: relative;
+    top: 20px;
+}
+
+.form-group label {
+    color: white;
+    font-family: 'Segoe UI Semibold', sans-serif;
+    margin-right: 10px;
+}
+
+.search-form .form-inline {
+
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.search-form .form-group {
+    margin: 10px;
+    font-family: 'Segoe UI Semibold', sans-serif;
+    text-align: left; /* Align labels to the left */
+    display: inline-block; /* Ensure each form-group is an inline block */
+    vertical-align: top; /* Align form-groups vertically at the top */
 }
 
 .search-form .form-control {
-    border-radius: 30px;
-    border: 2px solid #007bff;
-    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    padding: 8px;
+    display: block; /* Ensure inputs are block elements to stack with labels */
+    margin: 10px; /* Add some space between label and input */
 }
 
 .search-form .btn-outline-light {
-    border-radius: 30px;
-    padding: 0.5rem 1.5rem;
+    margin: 30px; /* Add margin to align the search button */
+    border-radius: 10px;
+    padding: 0.4rem 1rem;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.search-form .btn-outline-light:hover {
-    background-color: #fff;
-    color: #007bff;
+.search-form .btn-search:hover {
+    background-color: #5a6268;
 }
 
 /* Specialty Card Styles */
 .featured-specialties {
-    margin-top: 50px;
+    margin: 50px;
+    font-family: 'Segoe UI Semibold', sans-serif;
     text-align: center;
 }
 
@@ -117,9 +133,19 @@ body {
     background-color: #fff;
     border: 1px solid #ced4da;
     border-radius: 10px;
+    font-family: 'Segoe UI Semibold', sans-serif;
     padding: 20px;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
     transition: all 0.3s ease;
+}
+
+.specialty-image {
+    max-width: 150px; /* Adjusted size */
+    margin-bottom: 1rem;
 }
 
 .specialty-card:hover {
@@ -171,3 +197,4 @@ footer ul li a:hover {
 footer p {
     margin: 0;
 }
+
