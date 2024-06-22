@@ -30,5 +30,6 @@ urlpatterns = [
     path('privacy_policy/', include('privacy_policy.urls')),
     path('terms_and_conditions/', include('terms_and_conditions.urls')),
     path('aboutus/', include('about_us.urls')),
+    path('search/', include('appointments.urls')),
 
 ]
