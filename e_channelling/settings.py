@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'privacy_policy',
     'terms_and_conditions',
     'about_us',
+    'Cardiology',
 ]
 
 MIDDLEWARE = [
