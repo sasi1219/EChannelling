@@ -2,9 +2,185 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClinicMate - Search and Book Appointment</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+            background-color: #f8f9fa;
+        }
+        .section-title {
+            margin-bottom: 30px;
+        }
+        .doctor-card, .patient-card {
+            margin-bottom: 20px;
+        }
+        .jumbotron {
+            background: #007bff;
+            color: white;
+            padding: 2rem 1rem;
+            border-radius: 0.3rem;
+        }
+        .search-heading {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .form-control, .btn {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            margin-right: 10px;
+        }
+        .btn-outline-light {
+            color: #007bff;
+            background-color: #fff;
+            border-color: #007bff;
+        }
+        .card-header {
+            background: #007bff;
+            color: white;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .form-group.text-center button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+
+
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Search and Book Appointment</h1>
+            <p class="lead">Make your appointment here...</p>
+        </div>
 
+        <!-- Doctor Search Section -->
+        <div class="card">
+            <div class="card-header">
+                <h2 class="mb-0">Find a Doctor</h2>
+            </div>
+            <div class="card-body">
+                <form id="doctorSearchForm" class="form-row justify-content-center">
+                    <div class="form-group col-md-3">
+                        <label for="doctor_name">Doctor Name</label>
+                        <input type="text" class="form-control" id="doctor_name" placeholder="Search Doctor Name" name="doctor_name">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="specialization">Specialization</label>
+                        <select class="form-control" id="specialization" name="specialization">
+                            <option>Select Specialization</option>
+                            <option>Cardiology</option>
+                            <option>Dermatology</option>
+                            <option>Neurology</option>
+                            <option>Orthopedics</option>
+                            <option>Pediatrics</option>
+                            <option>Psychiatry</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="hospital">Hospital</label>
+                        <select class="form-control" id="hospital" name="hospital">
+                            <option>Select Hospital</option>
+                            <option>Asiri Surgical Hospital, Colombo</option>
+                            <option>Asiri Central Hospital, Colombo</option>
+                            <option>Asiri Hospital, Matara</option>
+                            <option>Lanka Hospitals, Colombo</option>
+                            <option>Nawaloka Hospital, Colombo</option>
+                            <option>Durdans Hospital, Colombo</option>
+                            <option>Hemas Hospital, Wattala</option>
+                            <option>Hemas Hospital, Thalawathugoda</option>
+                            <option>Kings Hospital, Colombo</option>
+                            <option>Golden Key Hospital, Rajagiriya</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="date">Date</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                    <div class="form-group col-md-12 text-center">
+                        <button id="checkAvailabilityButton" type="button" class="btn btn-outline-light">Check Availability</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Appointment Booking Section -->
+        <div class="mt-4">
+            <h3 class="text-center mb-4">Book an Appointment</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">Appointment Details</h4>
+                </div>
+                <div class="card-body">
+                    <form id="bookAppointmentForm" method="post" class="form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="reference_number">Reference Number</label>
+                            <input type="text" class="form-control" id="reference_number" name="reference_number" value="123456" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointment_number">Appointment Number</label>
+                            <input type="text" class="form-control" id="appointment_number" name="appointment_number" value="789012" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient_name">Patient Name</label>
+                            <input type="text" class="form-control" id="patient_name" name="patient_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient_nic">NIC</label>
+                            <input type="text" class="form-control" id="patient_nic" name="patient_nic" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointment_time">Appointment Time</label>
+                            <input type="time" class="form-control" id="appointment_time" name="appointment_time" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor_id">Doctor Details</label>
+                            <select class="form-control" id="doctor_id" name="doctor_id" readonly>
+                                {% for doctor in doctors %}
+                                    <option value="{{ doctor.id }}">{{ doctor.name }} ({{ doctor.specialization }} at {{ doctor.hospital }})</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="fee">Fee</label>
+                            <input type="text" class="form-control" id="fee" name="fee" >
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Book Appointment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        document.getElementById('checkAvailabilityButton').addEventListener('click', function() {
+            // Retrieve values from the search form
+            var doctorName = document.getElementById('doctor_name').value;
+            var specialization = document.getElementById('specialization').value;
+            var hospital = document.getElementById('hospital').value;
+            var date = document.getElementById('date').value;
+
+            // Set values in the book appointment form
+            document.getElementById('appointment_time').value = '10:00 AM'; // Example appointment time based on logic
+            document.getElementById('doctor_id').value = '1'; // Example doctor ID based on logic
+        });
+    </script>
 </body>
 </html>
