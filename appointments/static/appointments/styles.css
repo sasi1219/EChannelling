@@ -16,7 +16,7 @@ body {
 .navbar {
     background-color: #ffffff;
     border-bottom: 2px solid #007bff;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .navbar-brand {
@@ -79,9 +79,9 @@ body {
     color: white;
     font-size: 24px;
     font-family: 'Segoe UI Semibold', sans-serif;
-    margin-left: 80px;
+    margin-left: 155px;
     position: relative;
-    top: 20px;
+    top: 30px;
 }
 
 .form-group label {
@@ -200,3 +200,18 @@ footer p {
     margin: 0;
 }
 
+/* main/static/css/register.css */
+/* Custom styles */
+body {
+    background-color: #f8f9fa;
+}
+.register-container {
+    margin-top: 50px;
+}
+.register-card {
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
