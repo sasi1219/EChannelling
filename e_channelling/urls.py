@@ -31,5 +31,6 @@ urlpatterns = [
     path('terms_and_conditions/', include('terms_and_conditions.urls')),
     path('aboutus/', include('about_us.urls')),
     path('search/', include('appointments.urls')),
-
+    path('Cardiology/', include('Cardiology.urls')),
+    path('success/', include('register.urls')),
 ]
