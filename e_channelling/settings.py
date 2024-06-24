@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'terms_and_conditions',
     'about_us',
     'Cardiology',
+    'Dermatology',
 ]
 
 MIDDLEWARE = [
