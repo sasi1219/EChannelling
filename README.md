@@ -3,32 +3,40 @@ This repository is created and developed  as the source code for an e-channeling
 
 ## Features of the website
 
-- User Registration and Authentication
-- Doctor Search and Booking
+- User Registration
+- Sign in
+- Doctor Search
+- Doctor Profiles 
 - User Dashboard
-- Appointment Management
-- Telemedicine (Online Consultation)
+- Booking Appointments
+- View Appointments
 - Admin Panel
-- Support and FAQ Section
-- 
+
+  
 
 ## Planned User Flow of the website
 
-### 1. Landing Page
+### 1. Home Page
 **Elements:**
 - Header: Logo, Navigation Menu (Home, Services, About Us, Contact, Sign In/Sign Up)
-- Main Banner: Search Bar for finding doctors or services, promotional offers, and key services.
-- Popular Services: Quick links to popular specializations (e.g., General Physician, Pediatrician, Dermatologist).
-- How It Works: Brief explanation with illustrations on how the e-channeling process works.
-- Testimonials: Patient reviews and success stories.
-- Footer: Contact information, social media links, privacy policy, and terms of service.
+- Main Banner
+- Search Bar for finding doctors.
+- Quick links to popular specializations (e.g., Cardiologists, Pediatrician, Dermatologist).
+- Footer: Contact information, about the company, privacy policy, and terms of service.
 
-### 2. Sign Up / Sign In Page
+### 2. Register Page
 **Elements:**
 - Form Fields: Email, password, name, contact number, etc.
 - Social Sign-In: Options to sign in using Google, Facebook, etc.
 - Forgot Password: Link to reset the password.
 - Security Features: Captcha, two-factor authentication.
+
+### 2. Sign In Page
+**Elements:**
+- Form Fields: Username and Password.
+- Forgot Password: Link to reset the password.
+- Proceeds to user dashboard. 
+  
 
 ### 3. User Dashboard
 **Elements:**
