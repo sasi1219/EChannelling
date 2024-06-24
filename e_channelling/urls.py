@@ -34,6 +34,7 @@ urlpatterns = [
     path('Cardiology/', include('Cardiology.urls')),
     path('success/', include('register.urls')),
     path('Dermatology/', include('Dermatology.urls')),
+    path('doctor/<int:pk>/', include('doctor_profile.urls')),
     path('doctor_profile/', include('doctor_profile.urls')),
     path('view_appointment/', include('view_appointment.urls')),
 
