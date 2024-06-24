@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 from django.db import models
 
-class User(models.Model):
+class RegUser(models.Model):
     full_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=12, unique=True)
