@@ -1,11 +1,15 @@
 from django import forms
-from .models import User
+from .models import RegUser
 
 class UserRegistrationForm(forms.ModelForm):
     confirm_password = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:
-        model = User
+      Feature-Register_page
+        model = RegUser
+
+        
+        main
         fields = ['full_name', 'email', 'username', 'password', 'confirm_password', 'nic', 'phone', 'dob', 'gender', 'terms_agreed']
         widgets = {
             'password': forms.PasswordInput(),
