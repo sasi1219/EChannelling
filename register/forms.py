@@ -5,15 +5,9 @@ class UserRegistrationForm(forms.ModelForm):
     confirm_password = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:
-      Feature-About_us
         model = RegUser
-
-     
-
-        
-        main
-
-        fields = ['full_name', 'email', 'username', 'password', 'confirm_password', 'nic', 'phone', 'dob', 'gender', 'terms_agreed']
+        fields = ['full_name', 'email', 'username', 'password', 'confirm_password', 'nic', 'phone', 'dob', 'gender',
+                  'terms_agreed']
         widgets = {
             'password': forms.PasswordInput(),
             'confirm_password': forms.PasswordInput(),
