@@ -27,4 +27,3 @@ def signin(request):
             return render(request, 'signin/signin.html', context)
 
     return render(request, 'signin/signin.html')
-
