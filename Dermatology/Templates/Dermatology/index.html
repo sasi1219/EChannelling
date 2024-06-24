@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors_Dermatology</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Dermatology/styles.css' %}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+        <img src="{% static 'images/Logo.png' %}" alt="E-Channeling Logo">
+    </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="{% url 'Dermatology' %}">Dermatology</a></li>
+                <li class="nav-item"><a class="nav-link" href="/aboutus">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+
+            </ul>
+        </div>
+</nav>
+
+    <div class="container">
+        <h1>Dermatology</h1>
+        <div class="doctor-card">
+            <img src="{% static 'images/img.png' %}" alt="Dr.Wijekoon" class="doctor-image">
+            <div class="doctor-info">
+                <h2>Dr. C.J. Wijekoon</h2>
+                <p>MBBS, MD, Dermatology</p>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <img src="{% static 'images/img.png' %}" alt="Dr.Kamaladasa" class="doctor-image">
+            <div class="doctor-info">
+                <h2>Dr. A.I. Kamaladasa</h2>
+                <p>MBBS, MD, Dermatology</p>
+            </div>
+        </div>
+        <div class="doctor-card">
+            <img src="{% static 'images/img.png' %}" alt="Dr.Seneviratne" class="doctor-image">
+            <div class="doctor-info">
+                <h2>Dr. J.K.K. Seneviratne</h2>
+                <p>MBBS, MD, Dermatology</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
