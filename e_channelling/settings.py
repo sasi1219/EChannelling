@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'about_us',
     'Cardiology',
     'Dermatology',
+    'doctor_profile',
 ]
 
 MIDDLEWARE = [
