@@ -1,22 +1,33 @@
 from django import forms
-from .models import RegUser
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from .models import New
 
-class UserRegistrationForm(forms.ModelForm):
-    confirm_password = forms.CharField(widget=forms.PasswordInput())
+class UserRegistrationForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+    full_name = forms.CharField(max_length=100)
+    nic = forms.CharField(max_length=12)
+    phone = forms.CharField(max_length=15)
+    dob = forms.DateField()
+    gender = forms.ChoiceField(choices=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')])
 
     class Meta:
-        model = RegUser
-        fields = ['full_name', 'email', 'username', 'password', 'confirm_password', 'nic', 'phone', 'dob', 'gender',
-                  'terms_agreed']
-        widgets = {
-            'password': forms.PasswordInput(),
-            'confirm_password': forms.PasswordInput(),
-        }
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']
 
-    def clean(self):
-        cleaned_data = super().clean()
-        password = cleaned_data.get('password')
-        confirm_password = cleaned_data.get('confirm_password')
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.email = self.cleaned_data['email']
+        if commit:
+            user.save()
+            newuser = New(
+                user=user,
+                full_name=self.cleaned_data['full_name'],
+                nic=self.cleaned_data['nic'],
+                phone=self.cleaned_data['phone'],
+                dob=self.cleaned_data['dob'],
+                gender=self.cleaned_data['gender'],
 
-        if password and confirm_password and password != confirm_password:
-            raise forms.ValidationError("Passwords do not match")
+            )
+            newuser.save()
+        return user
