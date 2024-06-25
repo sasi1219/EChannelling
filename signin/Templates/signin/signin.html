@@ -38,8 +38,8 @@
                         <input type="text" class="form-control" id="username" name="username" required>
                     </div>
                     <div class="form-group">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required>
+                        <label for="password1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password1" name="password1" required>
                     </div>
                     <div class="form-group form-check">
                         <input type="checkbox" class="form-check-input" id="remember" name="remember">
@@ -47,6 +47,9 @@
                     </div>
                     <div id="captcha-container" class="mb-3"></div>
                     <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    {% if error %}
+                        <div class="alert alert-danger mt-3">{{ error }}</div>
+                    {% endif %}
                     <div class="text-center mt-3">
                         <a href="/password-reset">Forgot Password?</a>
                     </div>
