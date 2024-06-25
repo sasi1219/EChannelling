@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'Dermatology',
     'doctor_profile',
     'view_appointment',
+    'user_profile',
 ]
 
 MIDDLEWARE = [
@@ -66,9 +67,8 @@ import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),
-        ],
+        'DIRS': [BASE_DIR/ 'templates'],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
