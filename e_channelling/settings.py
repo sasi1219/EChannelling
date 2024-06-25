@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'Dermatology',
     'doctor_profile',
     'view_appointment',
+    'user_profile',
 ]
 
 MIDDLEWARE = [
@@ -62,10 +63,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'e_channelling.urls'
 
+import os
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/ 'templates'],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
