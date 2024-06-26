@@ -1,23 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms and Conditions - ClinicMate</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             background-color: #f8f9fa;
-            padding: 20px;
+            padding-top: 20px;
         }
         .container {
             max-width: 800px;
             margin: auto;
-            background-color: #ffffff;
             padding: 20px;
-            border-radius: 5px;
+            background-color: #ffffff;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
         }
         h1, h2, h3 {
             color: #007bff;
@@ -34,9 +36,33 @@
         strong {
             font-weight: bold;
         }
-    </style>
+
+</style>
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'user_profile/styles.css' %}">
+
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+        <img src="{% static 'images/Logo.png' %}" alt="E-Channeling Logo">
+    </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/appointments">Appointments</a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Logout</a></li>
+            </ul>
+        </div>
+</nav>
     <div class="container">
         <h1>Terms and Conditions for ClinicMate</h1>
         <p><strong>Effective Date:</strong> 01.12.2023</p>
