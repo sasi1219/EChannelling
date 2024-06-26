@@ -1,0 +1,105 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI Semibold', sans-serif;
+
+.doctor-card {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .doctor-image {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+        .doctor-info {
+            flex: 1;
+        }
+
+        .container{
+            margin-top: 40px;
+        }
+
+        .navbar-brand img {
+    height: 50px;
+    width: auto; /* Maintain aspect ratio */
+}
+
+.profile-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profile-container {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 2px solid #007bff;
+    padding: 0.5rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+.navbar-nav .btn-primary {
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-nav .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #007bff;
+    color: #fff;
+    font-family: 'Segoe UI Semibold', sans-serif;
+    margin-top: 50px;
+    padding: 50px 0;
+    text-align: center;
+}
+
+footer h4 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5rem;
+}
