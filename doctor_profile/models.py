@@ -1,4 +1,4 @@
-# models.py
+
 from django.db import models
 
 class Specialization(models.Model):
@@ -6,6 +6,14 @@ class Specialization(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Hospital(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
 
 class Doctor(models.Model):
     name = models.CharField(max_length=100)
@@ -18,11 +26,6 @@ class Doctor(models.Model):
     image = models.ImageField(upload_to='doctor_profile/static/images', null=True, blank=True)
     specialization = models.ForeignKey(Specialization, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.name
-
-class Hospital(models.Model):
-    name = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
