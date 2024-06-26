@@ -4,8 +4,6 @@ from django.contrib import admin
 
 
 from django.contrib import admin
-from .models import Doctor, Specialization, Hospital
+from .models import Check
 
-admin.site.register(Doctor)
-admin.site.register(Specialization)
-admin.site.register(Hospital)
+admin.site.register(Check)

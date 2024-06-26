@@ -4,24 +4,13 @@ from django.db import models
 
 
 from django.db import models
+from doctor_profile.models import Doctor, Specialization, Hospital
 
-class Specialization(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-class Hospital(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
-
-class Doctor(models.Model):
-    name = models.CharField(max_length=100)
+class Check(models.Model):
+    name = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     specialization = models.ForeignKey(Specialization, on_delete=models.CASCADE)
     hospital = models.ForeignKey(Hospital, on_delete=models.CASCADE)
     available_date = models.DateField()
 
     def __str__(self):
-        return self.name
+        return f"Check: Dr. {self.name.name} - {self.specialization.name} at {self.hospital.name} on {self.available_date}"
