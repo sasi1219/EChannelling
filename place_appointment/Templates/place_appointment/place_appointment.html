@@ -175,6 +175,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
+          function getQueryParam(param) {
+            var urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Pre-fill patient name and NIC fields
+        document.addEventListener("DOMContentLoaded", function() {
+            var patientName = getQueryParam('name');
+            var patientNic = getQueryParam('nic');
+
+            if (patientName) {
+                document.getElementById('patient_name').value = patientName;
+            }
+            if (patientNic) {
+                document.getElementById('patient_nic').value = patientNic;
+            }
+        });
+
         document.getElementById('checkAvailabilityButton').addEventListener('click', function() {
             // Retrieve values from the search form
             var doctorName = document.getElementById('doctor_name').value;
