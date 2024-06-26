@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     background-color: #f8f9fa;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI Semibold', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -78,7 +78,7 @@ body {
 .search-heading {
     color: white;
     font-size: 24px;
-    font-family: 'Segoe UI Semibold', sans-serif;
+
     margin-left: 155px;
     position: relative;
     top: 30px;
@@ -86,7 +86,7 @@ body {
 
 .form-group label {
     color: white;
-    font-family: 'Segoe UI Semibold', sans-serif;
+
     margin-right: 10px;
 }
 
@@ -98,7 +98,7 @@ body {
 
 .search-form .form-group {
     margin: 10px;
-    font-family: 'Segoe UI Semibold', sans-serif;
+
     text-align: left; /* Align labels to the left */
     display: inline-block; /* Ensure each form-group is an inline block */
     vertical-align: top; /* Align form-groups vertically at the top */
@@ -125,7 +125,7 @@ body {
 /* Specialty Card Styles */
 .featured-specialties {
     margin: 50px;
-    font-family: 'Segoe UI Semibold', sans-serif;
+
     text-align: center;
 }
 
@@ -133,7 +133,7 @@ body {
     background-color: #fff;
     border: 1px solid #ced4da;
     border-radius: 10px;
-    font-family: 'Segoe UI Semibold', sans-serif;
+
     padding: 20px;
     margin-bottom: 30px;
     display: flex;
@@ -166,7 +166,7 @@ body {
 footer {
     background-color: #007bff;
     color: #fff;
-    font-family: 'Segoe UI Semibold', sans-serif;
+
     margin-top: 50px;
     padding: 50px 0;
     text-align: center;
