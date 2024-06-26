@@ -7,12 +7,8 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'appointments/index.html')
 
-# appointments/views.py
-
-# appointments/views.py
-
 from django.shortcuts import render
-from .models import Doctor
+from .models import Check
 
 def search(request):
     doctor_name = request.GET.get('doctor_name')
@@ -20,19 +16,19 @@ def search(request):
     hospital = request.GET.get('hospital')
     date = request.GET.get('date')
 
-    doctors = Doctor.objects.all()
+    checks = Check.objects.all()
 
     if doctor_name:
-        doctors = doctors.filter(name__icontains=doctor_name)
+        checks = checks.filter(name__name__icontains=doctor_name)
     if specialization:
-        doctors = doctors.filter(specialization__name__iexact=specialization)
+        checks = checks.filter(specialization__name__iexact=specialization)
     if hospital:
-        doctors = doctors.filter(hospital__name__iexact=hospital)
+        checks = checks.filter(hospital__name__iexact=hospital)
     if date:
-        doctors = doctors.filter(available_date=date)
+        checks = checks.filter(available_date=date)
 
     message = ""
-    if doctors.exists():
+    if checks.exists():
         message = "Appointment is available. Sign in for proceeding with booking appointments."
         message_class = "alert-success"
     else:
@@ -40,5 +36,7 @@ def search(request):
         message_class = "alert-danger"
 
     return render(request, 'appointments/search_results.html',
-                  {'doctors': doctors, 'message': message, 'message_class': message_class})
+                  {'checks': checks, 'message': message, 'message_class': message_class})
+
+
 
