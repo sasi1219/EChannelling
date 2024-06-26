@@ -23,7 +23,7 @@ class Doctor(models.Model):
     registration_number = models.CharField(max_length=50)
     fee = models.DecimalField(max_digits=10, decimal_places=2)
     available_days = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='doctor_profile/static/images', null=True, blank=True)
+    image = models.ImageField(upload_to='images', null=True, blank=True)
     specialization = models.ForeignKey(Specialization, on_delete=models.CASCADE)
 
 
