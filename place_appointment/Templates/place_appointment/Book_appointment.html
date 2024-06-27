@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClinicMate - Book an Appointment</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+            background-color: #f8f9fa;
+        }
+        .section-title {
+            margin-bottom: 30px;
+        }
+        .doctor-card, .patient-card {
+            margin-bottom: 20px;
+        }
+        .jumbotron {
+            background: #007bff;
+            color: white;
+            padding: 2rem 1rem;
+            border-radius: 0.3rem;
+        }
+        .search-heading {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .form-control, .btn {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            margin-right: 10px;
+        }
+        .btn-outline-light {
+            color: #007bff;
+            background-color: #fff;
+            border-color: #007bff;
+        }
+        .card-header {
+            background: #007bff;
+            color: white;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .form-group.text-center button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+        .container {
+            max-width: 900px;
+        }
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Book an Appointment</h1>
+            <p class="lead">Make your appointment here...</p>
+        </div>
+        {% if message %}
+            <div class="alert {{ message_class }}">
+                {{ message }}
+            </div>
+        {% endif %}
+        {% if doctors %}
+            <ul class="list-group">
+                {% for Doctor in doctors %}
+                    <li class="list-group-item">
+                        Dr. {{ Doctor.name }} - {{ Doctor.specialization.name }} at {{ Doctor.hospital.name }} on {{ Doctor.available_date }}
+                    </li>
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+        <!-- Appointment Booking Section -->
+        <div class="mt-4">
+            <h3 class="text-center mb-4">Appointment Details</h3>
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="mb-0">Appointment Details</h4>
+                </div>
+                <div class="card-body">
+                    <form id="bookAppointmentForm" method="post" class="form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="reference_number">Reference Number</label>
+                            <input type="text" class="form-control" id="reference_number" name="reference_number" value="123456" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointment_number">Appointment Number</label>
+                            <input type="text" class="form-control" id="appointment_number" name="appointment_number" value="789012" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient_name">Patient Name</label>
+                            <input type="text" class="form-control" id="patient_name" name="patient_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="patient_nic">NIC</label>
+                            <input type="text" class="form-control" id="patient_nic" name="patient_nic" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="doctor_name">Doctor Name</label>
+                            <input type="text" class="form-control" id="doctor_name" name="doctor_name" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="hospital">Hospital</label>
+                            <input type="text" class="form-control" id="hospital" name="hospital" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="specialization">Specialization</label>
+                            <input type="text" class="form-control" id="specialization" name="specialization" required readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="appointment_date">Appointment Date</label>
+                            <input type="date" class="form-control" id="appointment_date" name="appointment_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fee">Fee</label>
+                            <input type="text" class="form-control" id="fee" name="fee" value="$100" readonly>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Book Appointment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
