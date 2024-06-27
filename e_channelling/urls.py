@@ -37,11 +37,8 @@ urlpatterns = [
     path('doctor/<int:pk>/', include('doctor_profile.urls')),
     path('doctor_profile/', include('doctor_profile.urls')),
     path('view_appointment/', include('view_appointment.urls')),
+    path('find_doctor/', include('place_appointment.urls')),
+    path('check_doctor/', include('place_appointment.urls')),
 
 ]
 
-from django.conf import settings
-from django.conf.urls.static import static
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
