@@ -85,28 +85,25 @@
                                 <th>Specialization</th>
                                 <th>Hospital</th>
                                 <th>Appointment Date</th>
-                                <th>Appointment Time</th>
                                 <th>Reference Number</th>
                                 <th>Appointment Number</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Replace with dynamic data from database -->
                             {% for appointment in upcoming_appointments %}
                             <tr>
                                 <td>{{ forloop.counter }}</td>
-                                <td>{{ appointment.doctor }}</td>
-                                <td>{{ appointment.specialization }}</td>
-                                <td>{{ appointment.hospital }}</td>
-                                <td>{{ appointment.date }}</td>
-                                <td>{{ appointment.time }}</td>
+                                <td>{{ appointment.doctor.name }}</td>
+                                <td>{{ appointment.doctor.specialization }}</td>
+                                <td>{{ appointment.hospital.name }}</td>
+                                <td>{{ appointment.appointment_date }}</td>
                                 <td>{{ appointment.reference_number }}</td>
                                 <td>{{ appointment.appointment_number }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
-
+                </div>
             </div>
         </div>
     </div>
