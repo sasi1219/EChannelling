@@ -1,5 +1,5 @@
 e-Channeling Website
-This repository is created and developed  as the source code for an e-channeling website named ,"ClinicMate" built using HTML, CSS, and Django. The website provides a seamless experience for users to search for doctors, book appointments, and manage their medical consultations online.
+This repository is created and developed  as the source code for an e-channeling website named ,"ClinicMate" built using HTML, CSS, and Django. The website provides an experience for users to search for doctors, book appointments, and view their upcoming appointments.
 
 ## Features of the website
 
@@ -27,9 +27,7 @@ This repository is created and developed  as the source code for an e-channeling
 ### 2. Register Page
 **Elements:**
 - Form Fields: Email, password, name, contact number, etc.
-- Social Sign-In: Options to sign in using Google, Facebook, etc.
-- Forgot Password: Link to reset the password.
-- Security Features: Captcha, two-factor authentication.
+- Agreement for terms and conditions.
 
 ### 2. Sign In Page
 **Elements:**
@@ -41,17 +39,21 @@ This repository is created and developed  as the source code for an e-channeling
 ### 3. User Dashboard
 **Elements:**
 - Welcome Message: Personalized greeting.
-- Upcoming Appointments: Summary of upcoming appointments with options to reschedule or cancel.
-- Medical History: Access to past appointment records, prescriptions, and test results.
-- Account Settings: Profile management, payment methods, notifications settings.
-- Help Center: FAQs, customer support contact.
+- Profile information of the user.
+- Channel a Doctor Feature.
+- View Upcoming Appointments Feature. 
 
-### 4. Search & Book Appointment
+
+### 4. Search a doctor for the appointment
 **Elements:**
-- Search Bar: Filters for location, specialization, doctor’s name, date, and availability.
-- Doctor Listings: Profiles of doctors with photos, ratings, specializations, and available time slots.
-- Doctor Profile: Detailed profile including qualifications, patient reviews, consultation fees, clinic/hospital location, and available slots.
+- Search Bar: Filters for location, specialization, doctor’s name, date to check availability.
+
+### 5. Book an appointment
+**Elements:**
 - Booking Form: Selected slot confirmation, patient details (pre-filled if signed in), and payment options.
+
+  ### 6. Search a doctor for the appointment
+**Elements:**
 - Confirmation Page: Booking details, payment confirmation, option to add to calendar, and instructions for the appointment.
 
 ### 5. Appointment Confirmation
