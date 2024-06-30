@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booked Successfully</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 50px;
+            background-color: #f8f9fa;
+        }
+        .jumbotron {
+            background: #28a745;
+            color: white;
+            padding: 2rem 1rem;
+            border-radius: 0.3rem;
+        }
+        .container {
+            max-width: 900px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Appointment Booked Successfully</h1>
+            <p class="lead">Your appointment has been booked successfully.</p>
+            <p>Appointment Details:</p>
+            <ul>
+                <li><strong>Reference Number:</strong> {{ appointment.reference_number }}</li>
+                <li><strong>Appointment Number:</strong> {{ appointment.appointment_number }}</li>
+            </ul>
+        </div>
+        <div class="text-center">
+            <a href="{% url 'view_appointment' %}" class="btn btn-primary btn-lg">View Appointments</a>
+            <a href="{% url 'user_profile' %}" class="btn btn-secondary btn-lg">Go to Profile</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

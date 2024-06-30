@@ -52,11 +52,9 @@
         .form-group.text-center button {
             font-size: 1.2rem;
             padding: 10px 20px;
+        }
         .container {
             max-width: 900px;
-        }
-
-
         }
     </style>
 </head>
@@ -71,16 +69,6 @@
                 {{ message }}
             </div>
         {% endif %}
-        {% if doctors %}
-            <ul class="list-group">
-                {% for Doctor in doctors %}
-                    <li class="list-group-item">
-                        Dr. {{ Doctor.name }} - {{ Doctor.specialization.name }} at {{ Doctor.hospital.name }} on {{ Doctor.available_date }}
-                    </li>
-                {% endfor %}
-            </ul>
-
-        {% endif %}
         <!-- Appointment Booking Section -->
         <div class="mt-4">
             <h3 class="text-center mb-4">Appointment Details</h3>
@@ -89,48 +77,54 @@
                     <h4 class="mb-0">Appointment Details</h4>
                 </div>
                 <div class="card-body">
-                    <form id="bookAppointmentForm" method="post" class="form">
+                {% if check %}
+                    <form id="bookAppointmentForm" method="post" action="{% url 'book_appointment' %}" class="form">
                         {% csrf_token %}
+                        <input type="hidden" name="doctor_id" value="{{ check.name.id }}">
+                        <input type="hidden" name="hospital_id" value="{{ check.hospital.id }}">
+                        <input type="hidden" name="appointment_date" value="{{ check.available_date }}">
+
                         <div class="form-group">
                             <label for="reference_number">Reference Number</label>
-                            <input type="text" class="form-control" id="reference_number" name="reference_number" value="123456" readonly>
+                            <input type="text" class="form-control" id="reference_number" name="reference_number" value="{{ reference_number }}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="appointment_number">Appointment Number</label>
-                            <input type="text" class="form-control" id="appointment_number" name="appointment_number" value="789012" readonly>
+                            <input type="text" class="form-control" id="appointment_number" name="appointment_number" value="{{ appointment_number }}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="patient_name">Patient Name</label>
-                            <input type="text" class="form-control" id="patient_name" name="patient_name" required>
+                            <input type="text" class="form-control" id="patient_name" name="patient_name" value="{{ request.user.new.full_name }}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="patient_nic">NIC</label>
-                            <input type="text" class="form-control" id="patient_nic" name="patient_nic" required>
+                            <input type="text" class="form-control" id="patient_nic" name="patient_nic" value="{{ request.user.new.nic }}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="doctor_name">Doctor Name</label>
-                            <input type="text" class="form-control" id="doctor_name" name="doctor_name" required readonly>
+                            <input type="text" class="form-control" id="doctor_name" name="doctor_name" value="{{ check.name.name }}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="hospital">Hospital</label>
-                            <input type="text" class="form-control" id="hospital" name="hospital" required readonly>
+                            <input type="text" class="form-control" id="hospital" name="hospital" value="{{ check.hospital.name }}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="specialization">Specialization</label>
-                            <input type="text" class="form-control" id="specialization" name="specialization" required readonly>
+                            <input type="text" class="form-control" id="specialization" name="specialization" value="{{ check.specialization.name }}" readonly>
                         </div>
                         <div class="form-group">
-                            <label for="appointment_date">Appointment Date</label>
-                            <input type="date" class="form-control" id="appointment_date" name="appointment_date" required>
+                            <label for="available_date">Appointment Date</label>
+                            <input type="text" class="form-control" id="available_date" name="available_date" value="{{ check.available_date }}" readonly>
                         </div>
                         <div class="form-group">
                             <label for="fee">Fee</label>
-                            <input type="text" class="form-control" id="fee" name="fee" value="$100" readonly>
+                            <input type="text" class="form-control" id="fee" name="fee" value="{{ check.name.fee }}" readonly>
                         </div>
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary btn-lg">Book Appointment</button>
                         </div>
                     </form>
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -1,10 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClinicMate - View Appointments</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
     <style>
         body {
             padding-top: 50px;
@@ -61,8 +63,31 @@
             padding: .3rem;
         }
     </style>
+
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'user_profile/styles.css' %}">
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+        <img src="{% static 'images/Logo.png' %}" alt="E-Channeling Logo">
+    </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/aboutus">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+
+            </ul>
+        </div>
+</nav>
+
     <div class="container">
         <!-- Page Title -->
         <div class="section-title">
@@ -73,7 +98,7 @@
         <!-- Upcoming Appointments Section -->
         <div class="card">
             <div class="card-header">
-                <h2 class="mb-0">Upcoming Appointments</h2>
+                <h2 class="mb-0" style="color: #007bff;">Upcoming Appointments</h2>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -107,9 +132,45 @@
             </div>
         </div>
     </div>
-
+<footer class="bg-primary text-white mt-5 py-5">
+    <div class="footercontainer">
+        <div class="row py-4">
+            <div class="col-md-4 text-center mb-4">
+                <h4><B>Contact Us</B></h4>
+                <ul class="list-unstyled">
+                    <li><a href="tel:+94771234567" class="text-white">+94 77 123 45 67</a></li>
+                    <li><a href="mailto:info@clinicmate.com" class="text-white">info@clinicmate.com</a></li>
+                    <li>Clinic Mate Company, Colombo 07.</li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <h4><B>Other</B></h4>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'terms_and_conditions' %}" class="text-white">Terms and Conditions</a></li>
+                    <li><a href="/faq" class="text-white">FAQ</a></li>
+                    <li><a href="/feedback" class="text-white">Feedback</a></li>
+                    <li><a href="{% url 'privacy_policy' %}" class="text-white" >Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-center mb-4">
+                <h4><B>About</B></h4>
+                <ul class="list-unstyled">
+                    <li><a href="/aboutus" class="text-white">The Company</a></li>
+                    <li><a href="/partners" class="text-white">Partners</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <p class="mb-0">&copy; 2021 All Right Reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
