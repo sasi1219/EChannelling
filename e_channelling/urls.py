@@ -39,6 +39,9 @@ urlpatterns = [
     path('view_appointment/', include('view_appointment.urls')),
     path('find_doctor/', include('place_appointment.urls')),
     path('check_doctor/', include('place_appointment.urls')),
-
+    path('book_appointment/', include('place_appointment.urls')),
 ]
+
+
+
 
