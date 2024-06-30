@@ -1,4 +1,4 @@
-e-Channeling Website
+E-Channeling Website
 This repository is created and developed  as the source code for an e-channeling website named ,"ClinicMate" built using HTML, CSS, and Django. The website provides an experience for users to search for doctors, book appointments, and view their upcoming appointments.
 
 ## Features of the website
