@@ -32,7 +32,6 @@
         {% for doctor in doctors %}
         <div class="col-md-4">
             <div class="doctor-card">
-                <img src="{{ doctor.image.url }}" alt="Dr. {{ doctor.name }}" class="doctor-image">
                 <div class="doctor-info">
                     <a href="{% url 'doctor_profile' doctor.pk %}">
                         <h2>Dr. {{ doctor.name }}</h2>
