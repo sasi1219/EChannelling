@@ -1,3 +1,11 @@
+Group Members
+1. 216016N - Meuni, MeuniB
+2. 216019C - sasi1219
+3. 216023H - Madusha27301
+4. 216094A - pahan242
+
+
+
 E-Channeling Website
 This repository is created and developed  as the source code for an e-channeling website named ,"ClinicMate" built using HTML, CSS, and Django. The website provides an experience for users to search for doctors, book appointments, and view their upcoming appointments.
 
