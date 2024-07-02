@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="{% static 'user_profile/styles.css' %}">
     <style>
         body {
-            padding-top: 50px;
+            padding-top: 0px;
             background-color: #f8f9fa;
         }
         .jumbotron {
             background: #28a745;
             color: white;
-            padding: 2rem 1rem;
-            border-radius: 0.3rem;
+            padding: 1rem 0rem;
+            border-radius: 0.5rem;
         }
         .container {
             max-width: 900px;
@@ -46,14 +46,13 @@
             <h1 class="display-4">Appointment Booked Successfully</h1>
             <p class="lead">Your appointment has been booked successfully.</p>
             <p>Appointment Details:</p>
-            <ul>
-                <li><strong>Reference Number:</strong> {{ appointment.reference_number }}</li>
-                <li><strong>Appointment Number:</strong> {{ appointment.appointment_number }}</li>
-            </ul>
+            <p style="color: black;"><strong>Reference Number:</strong> {{ appointment.reference_number }}</p>
+            <p style="color: black;"><strong>Appointment Number:</strong> {{ appointment.appointment_number }}</p>
+
         </div>
 
-        <div><h1 align="center">Payment Information</h1>
-    <p align="center ">Payments must be made physically and not through the online form.</p></div>
+        <div><h3 align="center">Payment Information</h3>
+    <p style="text-align: center; color: red;">Payments must be made physically and not through the online form.</p></div>
         <div class="text-center">
             <a href="{% url 'view_appointment' %}" class="btn btn-primary btn-lg">View Appointments</a>
             <a href="{% url 'user_profile' %}" class="btn btn-secondary btn-lg">Go to Profile</a>
