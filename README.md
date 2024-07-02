@@ -14,7 +14,7 @@ This repository is created and developed  as the source code for an e-channeling
 
   
 
-## Planned User Flow of the website
+## User Flow of the website
 
 ### 1. Home Page
 **Elements:**
@@ -26,7 +26,7 @@ This repository is created and developed  as the source code for an e-channeling
 
 ### 2. Register Page
 **Elements:**
-- Form Fields: Email, password, name, contact number, etc.
+- Form Fields: Email, password, name, contact number, nic and date of birth etc.
 - Agreement for terms and conditions.
 
 ### 2. Sign In Page
@@ -54,25 +54,24 @@ This repository is created and developed  as the source code for an e-channeling
 
   ### 6. Search a doctor for the appointment
 **Elements:**
-- Confirmation Page: Booking details, payment confirmation, option to add to calendar, and instructions for the appointment.
+- Option of searching doctor by the name, specializstion, hospital and appointment date.
 
-### 5. Appointment Confirmation
+   ### 7. Book the appointment
 **Elements:**
-- Appointment Details: Date, time, doctor’s name, location (with map), and special instructions.
-- Options: Reschedule, cancel, or add notes for the doctor.
-- Payment Receipt: Detailed receipt with payment breakdown and option to download or print.
+- Appointment Details: Reference number, Appointment number, patient name and NIC, Doctor detals, appointment date and fee. 
+- Option for placing the appointment.
 
-### 6. Telemedicine / Online Consultation (if applicable)
+### 8. Appointment Confirmation
 **Elements:**
-- Pre-Consultation Checklist: List of necessary documents, test results, etc.
-- Video Call Interface: Integrated video call platform with options to chat, share documents, and end the call.
-- Post-Consultation: Summary of the consultation, prescriptions, and follow-up recommendations.
+- Success message stating that the appointment booking is successful.
+- Appointment details such as reference number and appointment number.
+- The massage about the payment.
+- The options for viewing appointments and go to the profile.
 
-### 7. Post-Appointment Actions
+### 9. View Appointments 
 **Elements:**
-- Feedback Form: Rate the experience and provide feedback on the doctor and the platform.
-- Prescription Management: Access and download prescriptions provided by the doctor.
-- Follow-Up Appointments: Easy booking for follow-up consultations.
+-The doctor, specialization, Hospital, Appointment date,reference number and the appointment number of the appointments placed by the user is shown in this page.
+
 
 ### 8. Admin Panel (for website administrators)
 **Elements:**
@@ -82,16 +81,11 @@ This repository is created and developed  as the source code for an e-channeling
 - Reports and Analytics: Generate reports on website usage, appointment statistics, revenue, and other KPIs.
 - Support Ticketing System: Manage customer support tickets and inquiries.
 
-### 9. Support & FAQs
-**Elements:**
-- Help Center: Comprehensive FAQ section categorized by topics.
-- Contact Support: Contact form, live chat, and customer support phone number.
-- Resource Articles: Blog or articles on health tips, common medical questions, etc.
+
 
 ### 10. Footer
 **Elements:**
 - Quick Links: Links to important pages such as Terms of Service, Privacy Policy, and Contact Us.
-- Social Media Links: Icons linking to the platform’s social media profiles.
 - Contact Information: Address, phone number, and email.
 
 
@@ -104,4 +98,4 @@ Authentication: Django Authentication System
 
 
 The prject is started by creating the project "EChanneling" in PyCharm and under that folder different apps are planned to build for each page of the website. Then the changes have been committed and pushed to github from PyCharm. 
-So far the web pages for Home and Registrations are partially designed.
+
